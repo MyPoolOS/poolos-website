@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PoolOS — What's Coming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0c1e2e;
+    --cyan:   #0891b2;
+    --sky:    #22d3ee;
+    --ice:    #ecfeff;
+    --white:  #ffffff;
+    --slate:  #64748b;
+    --border: #e2e8f0;
+    --serif:  'DM Serif Display', Georgia, serif;
+    --sans:   'DM Sans', system-ui, sans-serif;
+    --mono:   'JetBrains Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--navy);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Nav ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--navy);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--slate);
+    text-decoration: none;
+    transition: color .15s;
+  }
+
+  .nav-links a:hover { color: var(--navy); }
+
+  .nav-cta {
+    background: var(--navy) !important;
+    color: white !important;
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: var(--navy);
+    padding: 96px 40px 88px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,211,238,.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: 56px;
+    color: var(--white);
+    line-height: 1.08;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-title .accent { color: var(--sky); }
+
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,.5);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .hero-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,.35);
+  }
+
+  .live-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34,197,94,.2);
+    animation: pulse 2s infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,.2); }
+    50% { box-shadow: 0 0 0 6px rgba(34,197,94,.1); }
+  }
+
+  /* ── Page ── */
+  .page {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* ── Section header ── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: 36px;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .section-desc {
+    font-size: 15px;
+    color: var(--slate);
+    max-width: 460px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--cyan), #e2e8f0 90%);
+  }
+
+  .tl-phase {
+    position: relative;
+    margin-bottom: 52px;
+  }
+
+  .tl-phase:last-child { margin-bottom: 0; }
+
+  .tl-dot {
+    position: absolute;
+    left: -28px;
+    top: 14px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px currentColor;
+    z-index: 1;
+  }
+
+  .tl-dot.now   { color: var(--cyan); background: var(--cyan); box-shadow: 0 0 0 3px rgba(8,145,178,.2); }
+  .tl-dot.soon  { color: var(--cyan); background: var(--white); }
+  .tl-dot.later { color: var(--border); background: var(--white); }
+  .tl-dot.hw    { color: #f97316; background: var(--white); }
+
+  .tl-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .tl-label.now   { color: var(--cyan); }
+  .tl-label.soon  { color: #7c3aed; }
+  .tl-label.later { color: var(--slate); }
+  .tl-label.hw    { color: #d97706; }
+
+  .tl-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
+  }
+
+  .tl-desc {
+    font-size: 15px;
+    color: var(--slate);
+    line-height: 1.65;
+    margin-bottom: 20px;
+    max-width: 580px;
+  }
+
+  /* ── Item cards within timeline phase ── */
+  .item-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .item-grid.single { grid-template-columns: 1fr; }
+  .item-grid.three  { grid-template-columns: 1fr 1fr 1fr; }
+
+  .item {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .item.now-card {
+    background: var(--ice);
+    border-color: rgba(8,145,178,.2);
+  }
+
+  .item.wg-card {
+    background: var(--navy);
+    border-color: var(--navy);
+    grid-column: 1 / -1;
+  }
+
+  .item-icon {
+    width: 36px; height: 36px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .item-icon svg {
+    width: 18px; height: 18px;
+    fill: none;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .item.now-card   .item-icon { background: rgba(8,145,178,.12); }
+  .item.now-card   .item-icon svg { stroke: var(--cyan); }
+  .item.wg-card    .item-icon { background: rgba(34,211,238,.12); }
+  .item.wg-card    .item-icon svg { stroke: var(--sky); }
+  .item:not(.now-card):not(.wg-card) .item-icon { background: #f1f5f9; }
+  .item:not(.now-card):not(.wg-card) .item-icon svg { stroke: var(--slate); }
+
+  .item-body { flex: 1; }
+
+  .item-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: -0.1px;
+  }
+
+  .item.now-card   .item-title { color: var(--navy); }
+  .item.wg-card    .item-title { color: var(--white); }
+  .item:not(.now-card):not(.wg-card) .item-title { color: var(--navy); }
+
+  .item-desc {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .item.now-card   .item-desc { color: var(--slate); }
+  .item.wg-card    .item-desc { color: rgba(255,255,255,.5); }
+  .item:not(.now-card):not(.wg-card) .item-desc { color: var(--slate); }
+
+  .exclusive-tag {
+    display: inline-block;
+    background: rgba(34,211,238,.15);
+    border: 1px solid rgba(34,211,238,.25);
+    color: var(--sky);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 100px;
+    margin-top: 8px;
+  }
+
+  /* ── Philosophy section ── */
+  .philosophy {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 52px 48px;
+    margin: 80px 0;
+    text-align: center;
+  }
+
+  .philosophy-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .philosophy-body {
+    font-size: 16px;
+    color: var(--slate);
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.75;
+  }
+
+  .philosophy-pillars {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .pillar {
+    flex: 1;
+    padding: 20px 16px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .pillar:last-child { border-right: none; }
+
+  .pillar-val {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .pillar-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  /* ── Brands section ── */
+  .brands-section {
+    margin-bottom: 80px;
+  }
+
+  .brand-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+    background: var(--white);
+  }
+
+  .brand-status {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .brand-status.available { background: #22c55e; }
+  .brand-status.coming    { background: #a78bfa; }
+  .brand-status.planned   { background: #cbd5e1; }
+
+  .brand-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--navy);
+    flex: 1;
+  }
+
+  .brand-detail {
+    font-size: 13px;
+    color: var(--slate);
+    flex: 2;
+  }
+
+  .brand-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    flex-shrink: 0;
+  }
+
+  .brand-tag.available { background: #f0fdf4; color: #16a34a; }
+  .brand-tag.coming    { background: #faf5ff; color: #7c3aed; }
+  .brand-tag.planned   { background: #f8fafc; color: var(--slate); }
+
+  /* ── Feedback CTA ── */
+  .feedback-section {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 52px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 80px;
+  }
+
+  .feedback-section::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(34,211,238,.1) 0%, transparent 65%);
+  }
+
+  .feedback-title {
+    font-family: var(--serif);
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+
+  .feedback-body {
+    font-size: 15px;
+    color: rgba(255,255,255,.5);
+    max-width: 420px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .feedback-btn {
+    display: inline-block;
+    background: var(--sky);
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 13px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    letter-spacing: -0.2px;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--navy);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--slate);
+    text-decoration: none;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: var(--slate);
+  }
+
+  @media (max-width: 640px) {
+    .hero-title { font-size: 38px; }
+    .item-grid, .item-grid.three { grid-template-columns: 1fr; }
+    .item.wg-card { grid-column: 1; }
+    .philosophy, .feedback-section { padding: 36px 24px; }
+    .page { padding: 52px 20px; }
+    .nav { padding: 0 20px; }
+    .brand-card { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="#" class="nav-logo">PoolOS</a>
+  <div class="nav-links">
+    <a href="#now">Available Now</a>
+    <a href="#coming">Coming Soon</a>
+    <a href="#brands">Brands</a>
+    <a href="#" class="nav-cta">Download →</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">Product Roadmap</div>
+  <h1 class="hero-title">Built in the open.<br><span class="accent">Shipping on purpose.</span></h1>
+  <p class="hero-sub">Here's exactly what PoolOS does today, what's coming next, and where we're headed. No vague promises — just a real plan for a better pool app.</p>
+  <div class="hero-status-row">
+    <span class="live-dot"></span>
+    v1.0 live on the App Store · Pentair ScreenLogic
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- AVAILABLE NOW -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div id="now" style="margin-bottom: 80px;">
+
+    <div class="section-header">
+      <div class="section-eyebrow">v1.0 · Available Now</div>
+      <h2 class="section-title">Everything in the first release</h2>
+      <p class="section-desc">Download PoolOS today. No account required.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-phase">
+        <div class="tl-dot now"></div>
+        <div class="tl-label now">Shipped · v1.0</div>
+        <div class="tl-title">The foundation</div>
+        <div class="tl-desc">A modern, stable Pentair ScreenLogic replacement. Everything you'd expect from a pool app — done properly.</div>
+
+        <div class="item-grid">
+
+          <!-- Weather Guard — full width, featured -->
+          <div class="item wg-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3v3m0 12v3M3 12h3m12 0h3"/><path d="M7.8 7.8L5.6 5.6m10.6 10.6 2.2 2.2M7.8 16.2l-2.2 2.2m10.6-10.6 2.2-2.2"/><circle cx="12" cy="12" r="3.5"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Weather Guard</div>
+              <div class="item-desc">Prevents your heat pump from running when outdoor temperatures make it inefficient — protecting your equipment and your energy bill. Configurable thresholds, hysteresis logic, transparent status. Not available in any Pentair product.</div>
+              <div class="exclusive-tag">Exclusive to PoolOS</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3v10.5"/><circle cx="12" cy="18" r="3"/><path d="M8 7h2M8 10h2M8 13h2"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Real-time dashboard</div>
+              <div class="item-desc">Pool temp, spa temp, air temp, heater status, and all your circuits — live, on one clean screen.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Instant controls</div>
+              <div class="item-desc">Toggle circuits, adjust setpoints, change light colors — the UI responds immediately, then verifies with your hardware in the background.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Pump diagnostics</div>
+              <div class="item-desc">Live RPM, wattage, and flow rate for your IntelliFlo variable speed pump.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L6.5 12A6 6 0 0 0 12 22a6 6 0 0 0 5.5-10L12 2z"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Salt cell monitoring</div>
+              <div class="item-desc">Salt PPM, pool and spa chlorine output independently, super chlorinate status and duration.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 4 12.74V17H8v-2.26A7 7 0 0 1 12 2z"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Light color control</div>
+              <div class="item-desc">Every IntelliBrite color and show mode in one clean picker. No cycling through modes, no counting flashes.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 3L4 7v6c0 5 3.8 9.3 8 10 4.2-.7 8-5 8-10V7l-8-4z"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">UltraTemp diagnostics</div>
+              <div class="item-desc">Compressor state, ambient air temp, water temp at the unit, and error codes for your heat pump.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/><circle cx="16" cy="16" r="4"/><path d="M16 14v2.5l1.5 1.5"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Schedule management</div>
+              <div class="item-desc">Add, edit, delete, and pause automation schedules from your phone. No touching the physical panel.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Remote access</div>
+              <div class="item-desc">Control your pool from anywhere via your existing Pentair relay. No new hardware. Works instantly.</div>
+            </div>
+          </div>
+
+          <div class="item now-card">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Custom circuit names & icons</div>
+              <div class="item-desc">Rename your circuits, pick an icon, choose a color. Make the dashboard yours instead of whatever the installer named things.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- COMING SOON -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div id="coming" style="margin-bottom: 80px;">
+
+    <div class="section-header">
+      <div class="section-eyebrow">On the way</div>
+      <h2 class="section-title">What's next</h2>
+      <p class="section-desc">Features in active development or up next. No timelines — only things that are definitely happening.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-phase">
+        <div class="tl-dot soon"></div>
+        <div class="tl-label soon">Coming soon</div>
+        <div class="tl-title">On your phone, everywhere</div>
+        <div class="tl-desc">Pool control that reaches beyond the app itself — your home screen, your wrist, your lock screen.</div>
+
+        <div class="item-grid">
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Home Screen & Lock Screen widget</div>
+              <div class="item-desc">Pool temp, spa temp, and heater status at a glance — without opening the app. One tap to take control.</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="10" width="8" height="8" r="8"/><path d="M12 2v20M2 10h20"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Apple Watch companion</div>
+              <div class="item-desc">Glanceable temps, heater status, and quick circuit toggles from your wrist.</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Smart alerts</div>
+              <div class="item-desc">Notifications for low salt, freeze protection activation, and heat pump errors — delivered to your phone even when the app is closed.</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Temperature history charts</div>
+              <div class="item-desc">Log pool and air temperature over time. See how your heat pump performs across seasons. Visualize when Weather Guard engages and what it saves.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="tl-phase">
+        <div class="tl-dot later"></div>
+        <div class="tl-label later">On the horizon</div>
+        <div class="tl-title">More control, more ways to use it</div>
+        <div class="tl-desc">Features that make PoolOS feel personal and work smarter.</div>
+
+        <div class="item-grid">
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Smart Scenes</div>
+              <div class="item-desc">One-tap macros — "Spa Mode" fires the heater, lights, jets, and pump speed in sequence. Set up once, use forever.</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">iPad — wall-mounted display</div>
+              <div class="item-desc">A multi-column dashboard designed for iPad. Mount it at the equipment pad for a permanent pool control display.</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Home Assistant integration</div>
+              <div class="item-desc">Publish your pool status over MQTT so Home Assistant users can integrate pool data into their smart home automations.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- BRANDS -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div id="brands" class="brands-section">
+
+    <div class="section-header">
+      <div class="section-eyebrow">Equipment brands</div>
+      <h2 class="section-title">One app for every pool</h2>
+      <p class="section-desc">PoolOS is built from day one to support all major pool brands. Pentair is first. The others are coming.</p>
+    </div>
+
+    <div class="brand-card">
+      <span class="brand-status available"></span>
+      <span class="brand-name">Pentair</span>
+      <span class="brand-detail">Full ScreenLogic support — EasyTouch, IntelliCenter, IntelliTouch. Local WiFi and remote relay.</span>
+      <span class="brand-tag available">Available now</span>
+    </div>
+
+    <div class="brand-card">
+      <span class="brand-status coming"></span>
+      <span class="brand-name">Jandy / Zodiac</span>
+      <span class="brand-detail">AquaLink RS and iAquaLink support. The second-largest installed base.</span>
+      <span class="brand-tag coming">Coming soon</span>
+    </div>
+
+    <div class="brand-card">
+      <span class="brand-status planned"></span>
+      <span class="brand-name">Hayward</span>
+      <span class="brand-detail">OmniLogic and OmniHub support planned. Completes the big three.</span>
+      <span class="brand-tag planned">Planned</span>
+    </div>
+
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- HARDWARE -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div style="margin-bottom: 80px;">
+
+    <div class="section-header">
+      <div class="section-eyebrow">Hardware · Future</div>
+      <h2 class="section-title">Beyond the app</h2>
+      <p class="section-desc">The app unlocks everything your existing controller exposes. Hardware unlocks the rest.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-phase">
+        <div class="tl-dot hw"></div>
+        <div class="tl-label hw">Exploring · Future</div>
+        <div class="tl-title">The PoolOS hardware story</div>
+        <div class="tl-desc">Pool equipment is capable of far more than any controller currently exposes — full RGB lighting, direct chiller control, deeper diagnostics. We're exploring hardware adapters that bypass the controller's limitations entirely. No timelines yet — we'll share more when we're ready.</div>
+
+        <div class="item-grid">
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 4 12.74V17H8v-2.26A7 7 0 0 1 12 2z"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">Full RGB light control adapter</div>
+              <div class="item-desc">16 million colors. Any pool, any brand. A small Wi-Fi adapter that PoolOS controls directly — no manufacturer limit.</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="item-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 12h10M12 7v10"/></svg>
+            </div>
+            <div class="item-body">
+              <div class="item-title">PoolOS Hub</div>
+              <div class="item-desc">A full controller replacement that talks directly to your equipment — surfacing all the data your hardware reports and enabling control your manufacturer never allowed.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Philosophy -->
+  <div class="philosophy">
+    <h2 class="philosophy-title">How we build</h2>
+    <p class="philosophy-body">PoolOS is built by one developer who owns the same setup you do. Every feature ships because it solves a real problem — not to fill a feature matrix. Support emails get real responses.</p>
+    <div class="philosophy-pillars">
+      <div class="pillar">
+        <div class="pillar-val">Modern</div>
+        <div class="pillar-label">Design</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-val">Stable</div>
+        <div class="pillar-label">Connection</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-val">Supported</div>
+        <div class="pillar-label">By a human</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Feedback CTA -->
+  <div class="feedback-section">
+    <h2 class="feedback-title">Something you want to see?</h2>
+    <p class="feedback-body">The roadmap is shaped by what pool owners actually need. If there's a feature missing, a brand you want supported, or something that's always frustrated you about pool apps — tell us.</p>
+    <a href="mailto:support@poolos.app" class="feedback-btn">Share your feedback →</a>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-logo">PoolOS</div>
+  <div class="footer-links">
+    <a href="#">Support</a>
+    <a href="#">Privacy</a>
+    <a href="#">Download</a>
+  </div>
+  <div class="footer-copy">© 2026 Chad Baugh · Not affiliated with Pentair</div>
+</footer>
+
+</body>
+</html>

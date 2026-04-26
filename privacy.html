@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — PoolOS</title>
+<meta name="description" content="PoolOS privacy policy. No account. No data collection. No cloud. Your pool data stays on your device."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --blue:    #007AFF;
+    --blue-dk: #0056CC;
+    --orange:  #f97316;
+    --teal:    #30B0C7;
+    --green:   #22c55e;
+    --bg:      #f5f5f7;
+    --white:   #ffffff;
+    --navy:    #0c1e2e;
+    --text:    #1d1d1f;
+    --muted:   #6e6e73;
+    --border:  #d2d2d7;
+    --font:    'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+  /* ── NAV ── */
+  nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-wordmark{font-size:17px;font-weight:700;color:var(--text);letter-spacing:-.3px}
+  .nav-cta{background:var(--blue);color:#fff;font-size:13px;font-weight:600;padding:8px 18px;border-radius:100px;text-decoration:none;transition:background .15s}
+  .nav-cta:hover{background:var(--blue-dk)}
+
+  /* ── PAGE HEADER ── */
+  .page-header{background:var(--navy);padding:64px 24px 56px;text-align:center}
+  .page-eyebrow{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px}
+  .page-title{font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-1px;color:#fff;line-height:1.1;margin-bottom:12px}
+  .page-sub{font-size:15px;color:rgba(255,255,255,.45);max-width:480px;margin:0 auto}
+
+  /* ── CONTENT ── */
+  .content{max-width:720px;margin:0 auto;padding:64px 24px 80px}
+  .summary-card{background:var(--white);border-radius:20px;padding:32px;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.06);margin-bottom:48px}
+  .summary-title{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:20px}
+  .summary-row{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+  .summary-row:last-child{border-bottom:none;padding-bottom:0}
+  .summary-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .summary-label{font-size:14px;font-weight:600;color:var(--text)}
+  .summary-value{font-size:13px;color:var(--muted);margin-top:1px}
+  .badge-none{display:inline-block;background:rgba(34,197,94,.12);color:#16a34a;font-size:11px;font-weight:700;padding:2px 8px;border-radius:100px;margin-left:auto;flex-shrink:0}
+
+  .policy-section{margin-bottom:40px}
+  .policy-section h2{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.3px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+  .policy-section p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+  .policy-section p:last-child{margin-bottom:0}
+  .policy-section ul{margin:10px 0 12px 20px}
+  .policy-section ul li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+
+  .updated{font-size:13px;color:var(--muted);margin-bottom:40px}
+
+  /* ── FOOTER ── */
+  footer{background:var(--navy);padding:40px 24px;text-align:center}
+  .footer-logo{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.3px;margin-bottom:6px}
+  .footer-sub{font-size:13px;color:rgba(255,255,255,.3);margin-bottom:20px}
+  .footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .15s}
+  .footer-links a:hover{color:rgba(255,255,255,.8)}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,.18)}
+
+  @media(max-width:600px){
+    .summary-card{padding:20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://mypoolos.app/" class="nav-logo">
+    <span class="nav-wordmark">PoolOS</span>
+  </a>
+  <a href="https://mypoolos.app/#cta" class="nav-cta">Download</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-eyebrow">Legal</div>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-sub">PoolOS is built around one principle: your data is yours. We don't collect it, store it, or share it.</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <p class="updated">Last updated: April 2026</p>
+
+  <!-- SUMMARY CARD -->
+  <div class="summary-card">
+    <div class="summary-title">The short version</div>
+
+    <div class="summary-row">
+      <div class="summary-icon" style="background:rgba(34,197,94,.1);color:#16a34a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <div>
+        <div class="summary-label">Account required</div>
+        <div class="summary-value">No sign-up, no login, no profile</div>
+      </div>
+      <span class="badge-none">None</span>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-icon" style="background:rgba(34,197,94,.1);color:#16a34a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+      </div>
+      <div>
+        <div class="summary-label">Data sent to servers</div>
+        <div class="summary-value">Communicates only with your local Pentair controller</div>
+      </div>
+      <span class="badge-none">None</span>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-icon" style="background:rgba(34,197,94,.1);color:#16a34a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+      </div>
+      <div>
+        <div class="summary-label">Analytics or tracking</div>
+        <div class="summary-value">No usage tracking, no crash reporting services</div>
+      </div>
+      <span class="badge-none">None</span>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-icon" style="background:rgba(34,197,94,.1);color:#16a34a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div>
+        <div class="summary-label">Third-party SDKs</div>
+        <div class="summary-value">No advertising, analytics, or social SDKs included</div>
+      </div>
+      <span class="badge-none">None</span>
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-icon" style="background:rgba(34,197,94,.1);color:#16a34a">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <div class="summary-label">Data sold or shared</div>
+        <div class="summary-value">No data to sell — we never collect it in the first place</div>
+      </div>
+      <span class="badge-none">None</span>
+    </div>
+  </div>
+
+  <!-- FULL POLICY -->
+  <div class="policy-section">
+    <h2>Overview</h2>
+    <p>PoolOS ("the app") is a third-party controller interface for Pentair ScreenLogic-compatible pool systems, developed and maintained by Chad Baugh. This privacy policy explains how the app handles your information — or more accurately, how it doesn't.</p>
+    <p>PoolOS is designed from the ground up to operate without collecting, transmitting, or storing any personal data. The app communicates exclusively with your Pentair ScreenLogic gateway on your local network.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Information we collect</h2>
+    <p>We collect nothing. PoolOS does not collect, store, or transmit any personally identifiable information. Specifically, the app does not collect:</p>
+    <ul>
+      <li>Your name, email address, or contact information</li>
+      <li>Your location or IP address</li>
+      <li>Device identifiers or advertising IDs</li>
+      <li>Pool equipment data, settings, or usage history</li>
+      <li>App usage statistics or behavioral data</li>
+      <li>Crash reports or diagnostic information</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2>How the app communicates</h2>
+    <p>PoolOS connects directly to your Pentair ScreenLogic interface adapter over your home network. All communication stays between your iPhone and your controller — no intermediate servers, no cloud relay, no Pentair or third-party services involved.</p>
+    <p>When using PoolOS remotely (outside your home network), the app may use Pentair's ScreenLogic relay service to establish a connection to your controller. In this case, connection data passes through Pentair's infrastructure — this is a function of Pentair's own protocol, not something PoolOS adds or controls. PoolOS does not operate its own relay servers.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Local storage</h2>
+    <p>Any preferences or settings you configure in PoolOS — such as your controller's IP address or app preferences — are stored locally on your device using Apple's standard UserDefaults system. This data never leaves your device and is not accessible to us.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Third-party services</h2>
+    <p>PoolOS does not include any third-party analytics, advertising, crash reporting, or social networking SDKs. There are no third-party services that collect data through PoolOS.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Children's privacy</h2>
+    <p>PoolOS does not knowingly collect any information from anyone, including children under the age of 13. As the app collects no data from any users, it is compliant with the Children's Online Privacy Protection Act (COPPA) by design.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Changes to this policy</h2>
+    <p>If this privacy policy changes, the updated version will be posted at this URL with a revised "last updated" date. Given that the app collects no data, material changes to this policy are unlikely.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2>Contact</h2>
+    <p>If you have any questions about this privacy policy or how PoolOS works, you can reach us at <a href="mailto:privacy@mypoolos.app" style="color:var(--blue);text-decoration:none">privacy@mypoolos.app</a>.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">PoolOS</div>
+  <div class="footer-sub">Modern Pentair Pool Control</div>
+  <div class="footer-links">
+    <a href="https://mypoolos.app/privacy.html">Privacy Policy</a>
+    <a href="mailto:info@mypoolos.app">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 Chad Baugh. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
