@@ -8,10 +8,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger cPanel Git Deploy
+      - name: Pull latest from GitHub + Deploy
         run: |
+          echo "=== Fetching from remote ==="
+          curl -s \
+            -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_TOKEN }}" \
+            "https://sh00129.hostgator.com:2083/execute/VersionControl/retrieve" \
+            --data "repository=/home1/nhqxwzte/public_html/website_2da8ad2a"
+
+          echo "=== Deploying HEAD ==="
           curl -s \
             -H "Authorization: cpanel ${{ secrets.CPANEL_USERNAME }}:${{ secrets.CPANEL_TOKEN }}" \
             "https://sh00129.hostgator.com:2083/execute/VersionControlDeployment/create" \
-            --data "repository=/home1/nhqxwzte/public_html/website_2da8ad2a" \
-            --data "branch=main"
+            --data "repository=/home1/nhqxwzte/public_html/website_2da8ad2a"
