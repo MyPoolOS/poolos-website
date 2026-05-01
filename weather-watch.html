@@ -293,8 +293,20 @@
       <!-- Storm Watch -->
       <div class="tier-card">
         <div class="tier-badge free">&#10003;&nbsp; Free &middot; Included</div>
-        <div style="color:var(--green);margin-bottom:14px">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/><path d="M11 13v-2"/><path d="M11 17v-2"/></svg>
+        <div data-build="tc-storm" style="margin-bottom:14px;height:90px;display:flex;align-items:center">
+          <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:90px">
+            <path class="build-el" id="tc-sw-fill" d="M150,25 L75,53 L75,110 L225,110 L225,53 Z" fill="#0f2236" stroke="none"/>
+            <line class="build-el" id="tc-sw-left" x1="75" y1="110" x2="75" y2="53" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
+            <line class="build-el" id="tc-sw-right" x1="225" y1="110" x2="225" y2="53" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
+            <path class="build-el" id="tc-sw-peak" d="M75,53 L150,25 L225,53" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <line class="build-el" id="tc-sw-dashes" x1="75" y1="110" x2="225" y2="110" stroke="#e8a020" stroke-width="4" stroke-dasharray="10,7"/>
+            <ellipse class="build-el" id="tc-sw-c1" cx="146" cy="64" rx="26" ry="13" fill="#5a6370"/>
+            <ellipse class="build-el" id="tc-sw-c2" cx="163" cy="60" rx="18" ry="11" fill="#6b7280"/>
+            <ellipse class="build-el" id="tc-sw-c3" cx="134" cy="62" rx="16" ry="10" fill="#4b5563"/>
+            <line class="build-el" id="tc-sw-r1" x1="139" y1="78" x2="134" y2="100" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round"/>
+            <line class="build-el" id="tc-sw-r2" x1="153" y1="80" x2="148" y2="102" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round"/>
+            <line class="build-el" id="tc-sw-r3" x1="167" y1="77" x2="162" y2="99" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
         </div>
         <div class="tier-title">Storm Watch</div>
         <div class="tier-desc">Official NWS severe weather alerts for your pool&rsquo;s location. Get notified the moment a warning is issued &mdash; before conditions turn dangerous.</div>
@@ -312,8 +324,18 @@
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
           <div class="tier-badge paid">&#9733;&nbsp; Pro</div>
         </div>
-        <div style="color:var(--orange);margin-bottom:14px">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div data-build="tc-guard" style="margin-bottom:14px;height:90px;display:flex;align-items:center">
+          <svg viewBox="0 0 300 240" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:90px">
+            <path class="build-el" id="tc-wg-fill" d="M75,35 L75,90 Q75,165 150,195 Q225,165 225,90 L225,35 Z" fill="#0f2236" stroke="none"/>
+            <path class="build-el" id="tc-wg-left" d="M75,35 L75,90 Q75,165 150,195" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
+            <path class="build-el" id="tc-wg-right" d="M225,35 L225,90 Q225,165 150,195" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
+            <line class="build-el" id="tc-wg-dashes" x1="75" y1="35" x2="225" y2="35" stroke="#e8a020" stroke-width="4" stroke-dasharray="10,7"/>
+            <rect class="build-el" id="tc-wg-toutline" x="146" y="62" width="9" height="58" rx="4.5" fill="none" stroke="#4d9fff" stroke-width="2.5"/>
+            <circle class="build-el" id="tc-wg-tbulb" cx="150.5" cy="134" r="13" fill="#4d9fff"/>
+            <rect class="build-el" id="tc-wg-tfill" x="148" y="87" width="5" height="40" fill="#4d9fff"/>
+            <line class="build-el" id="tc-wg-min" x1="160" y1="90" x2="185" y2="90" stroke="#4d9fff" stroke-width="2" stroke-dasharray="3,2"/>
+            <text class="build-el" id="tc-wg-mintxt" x="189" y="94" font-size="12" fill="#4d9fff" font-weight="600" font-family="-apple-system, sans-serif">MIN</text>
+          </svg>
         </div>
         <div class="tier-title">WeatherGuard</div>
         <div class="tier-desc">Automatic heat pump protection when outdoor temperatures drop below safe operating range. Set it once. Your equipment is protected silently, forever.</div>
@@ -331,8 +353,16 @@
           <div class="tier-badge paid">&#9889;&nbsp; Pro</div>
           <div class="tier-coming-tag">Coming Soon</div>
         </div>
-        <div style="color:var(--blue);margin-bottom:14px">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <div data-build="tc-lightning" style="margin-bottom:14px;height:90px;display:flex;align-items:center">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:90px">
+            <circle class="build-el" id="tc-lp-r1" cx="150" cy="145" r="120" fill="none" stroke="#1e2a3a" stroke-width="1.5" stroke-dasharray="6,6"/>
+            <circle class="build-el" id="tc-lp-r2" cx="150" cy="145" r="92" fill="none" stroke="#1e3a5a" stroke-width="1.8" stroke-dasharray="5,5"/>
+            <circle class="build-el" id="tc-lp-r3" cx="150" cy="145" r="64" fill="none" stroke="#1e4470" stroke-width="2" stroke-dasharray="5,5"/>
+            <circle class="build-el" id="tc-lp-r4" cx="150" cy="145" r="36" fill="none" stroke="#2a5a8a" stroke-width="2" stroke-dasharray="4,4"/>
+            <circle class="build-el" id="tc-lp-r5" cx="150" cy="145" r="16" fill="none" stroke="#3670a8" stroke-width="2.5"/>
+            <circle class="build-el" id="tc-lp-dot" cx="150" cy="145" r="4" fill="#3670a8"/>
+            <polygon class="build-el" id="tc-lp-bolt" points="156,72 140,138 148,138 138,218 168,128 158,128 166,72" fill="#fbbf24" stroke="#d4a017" stroke-width="1"/>
+          </svg>
         </div>
         <div class="tier-title">Lightning Proximity</div>
         <div class="tier-desc">Real-time lightning strike tracking with distance-based alerts. Know exactly how close strikes are &mdash; not just that a storm is somewhere nearby.</div>
@@ -639,6 +669,29 @@ function show(id, delay) {
 
 // ── Build sequences ──
 const builds = {
+
+  'tc-storm': () => {
+    show('tc-sw-left', 0); show('tc-sw-right', 120);
+    show('tc-sw-peak', 280); show('tc-sw-fill', 400);
+    show('tc-sw-dashes', 580);
+    show('tc-sw-c1', 820); show('tc-sw-c3', 890); show('tc-sw-c2', 960);
+    show('tc-sw-r1', 1150); show('tc-sw-r2', 1240); show('tc-sw-r3', 1330);
+  },
+
+  'tc-guard': () => {
+    show('tc-wg-fill', 0); show('tc-wg-left', 100); show('tc-wg-right', 200);
+    show('tc-wg-dashes', 380);
+    show('tc-wg-toutline', 620); show('tc-wg-tbulb', 820);
+    show('tc-wg-tfill', 1020);
+    show('tc-wg-min', 1220); show('tc-wg-mintxt', 1320);
+  },
+
+  'tc-lightning': () => {
+    show('tc-lp-r5', 0); show('tc-lp-dot', 60);
+    show('tc-lp-r4', 220); show('tc-lp-r3', 420);
+    show('tc-lp-r2', 620); show('tc-lp-r1', 820);
+    show('tc-lp-bolt', 1100);
+  },
 
   'hero-combined': () => {
     show('hcb-shield', 300);
