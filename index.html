@@ -142,6 +142,7 @@
     .pillars-bar{flex-wrap:wrap}
     .pillar{border-right:none;border-bottom:1px solid var(--border);max-width:100%;width:50%}
   }
+  [data-build] .build-el{opacity:0}
 </style>
 </head>
 <body>
@@ -327,12 +328,34 @@
     <p class="section-body" style="margin:0 auto 40px">Storm Watch is just the beginning. Weather Watch Pro adds heat pump protection and real-time lightning detection &mdash; intelligence no pool app has ever offered. Nobody feels nickel-and-dimed: the free app does everything you need. Premium does the things that require cloud services running on infrastructure PoolOS operates for you.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:0 auto 36px;text-align:left">
       <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(249,115,22,.1);color:var(--orange)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="feature-title">Weather Guard &nbsp;<span style="font-size:11px;font-weight:700;color:var(--blue);background:rgba(0,122,255,.1);border-radius:100px;padding:2px 8px;letter-spacing:.5px">PRO</span></div>
+        <div data-build="idx-guard" style="margin-bottom:14px;overflow:hidden">
+          <svg viewBox="65 28 170 175" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;display:block">
+            <path class="build-el" id="idx-wg-fill" d="M75,55 L75,110 Q75,185 150,215 Q225,185 225,110 L225,55 Z" fill="#0f2236" stroke="none"/>
+            <path class="build-el" id="idx-wg-left" d="M75,55 L75,110 Q75,185 150,215" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
+            <path class="build-el" id="idx-wg-right" d="M225,55 L225,110 Q225,185 150,215" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
+            <line class="build-el" id="idx-wg-dashes" x1="75" y1="55" x2="225" y2="55" stroke="#e8a020" stroke-width="4" stroke-dasharray="10,7"/>
+            <rect class="build-el" id="idx-wg-toutline" x="146" y="80" width="9" height="58" rx="4.5" fill="none" stroke="#4d9fff" stroke-width="2.5"/>
+            <circle class="build-el" id="idx-wg-tbulb" cx="150.5" cy="152" r="13" fill="#4d9fff"/>
+            <rect class="build-el" id="idx-wg-tfill" x="148" y="105" width="5" height="40" fill="#4d9fff"/>
+            <line class="build-el" id="idx-wg-min" x1="160" y1="108" x2="183" y2="108" stroke="#4d9fff" stroke-width="2" stroke-dasharray="3,2"/>
+            <text class="build-el" id="idx-wg-mintxt" x="187" y="112" font-size="11" fill="#4d9fff" font-weight="600" font-family="-apple-system,sans-serif">MIN</text>
+          </svg>
+        </div>
+        <div class="feature-title">WeatherGuard &nbsp;<span style="font-size:11px;font-weight:700;color:var(--blue);background:rgba(0,122,255,.1);border-radius:100px;padding:2px 8px;letter-spacing:.5px">PRO</span></div>
         <div class="feature-text">Automatically shuts off your heat pump when outdoor temps drop below its safe range. Set once, runs silently forever. Never risks compressor damage again.</div>
       </div>
       <div class="feature-card">
-        <div class="feature-icon" style="background:rgba(234,179,8,.1);color:#ca8a04"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div data-build="idx-lightning" style="margin-bottom:14px;overflow:hidden">
+          <svg viewBox="22 18 256 208" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:52px;display:block">
+            <circle class="build-el" id="idx-lp-r1" cx="150" cy="145" r="120" fill="none" stroke="#1e2a3a" stroke-width="1.5" stroke-dasharray="6,6"/>
+            <circle class="build-el" id="idx-lp-r2" cx="150" cy="145" r="92" fill="none" stroke="#1e3a5a" stroke-width="1.8" stroke-dasharray="5,5"/>
+            <circle class="build-el" id="idx-lp-r3" cx="150" cy="145" r="64" fill="none" stroke="#1e4470" stroke-width="2" stroke-dasharray="5,5"/>
+            <circle class="build-el" id="idx-lp-r4" cx="150" cy="145" r="36" fill="none" stroke="#2a5a8a" stroke-width="2" stroke-dasharray="4,4"/>
+            <circle class="build-el" id="idx-lp-r5" cx="150" cy="145" r="16" fill="none" stroke="#3670a8" stroke-width="2.5"/>
+            <circle class="build-el" id="idx-lp-dot" cx="150" cy="145" r="4" fill="#3670a8"/>
+            <polygon class="build-el" id="idx-lp-bolt" points="156,72 140,138 148,138 138,218 168,128 158,128 166,72" fill="#fbbf24" stroke="#d4a017" stroke-width="1"/>
+          </svg>
+        </div>
         <div class="feature-title">Lightning Proximity &nbsp;<span style="font-size:11px;font-weight:600;color:var(--muted);background:var(--border);border-radius:100px;padding:2px 8px;letter-spacing:.5px">COMING SOON</span></div>
         <div class="feature-text">Real strike detection with distance and closing rate. Exit-the-pool alerts when lightning is actually approaching &mdash; not just a watch issued for your county.</div>
       </div>
@@ -492,5 +515,42 @@
   <div class="footer-copy">© 2026 Chad Baugh. All rights reserved.</div>
 </footer>
 
+
+<script>
+function showEl(id, delay) {
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) { el.style.transition = 'opacity 0.5s ease-out'; el.style.opacity = '1'; }
+  }, delay);
+}
+const idxBuilds = {
+  'idx-guard': () => {
+    showEl('idx-wg-fill', 0); showEl('idx-wg-left', 100); showEl('idx-wg-right', 200);
+    showEl('idx-wg-dashes', 380);
+    showEl('idx-wg-toutline', 620); showEl('idx-wg-tbulb', 820);
+    showEl('idx-wg-tfill', 1020);
+    showEl('idx-wg-min', 1220); showEl('idx-wg-mintxt', 1320);
+  },
+  'idx-lightning': () => {
+    showEl('idx-lp-r5', 0); showEl('idx-lp-dot', 60);
+    showEl('idx-lp-r4', 220); showEl('idx-lp-r3', 420);
+    showEl('idx-lp-r2', 620); showEl('idx-lp-r1', 820);
+    showEl('idx-lp-bolt', 1100);
+  }
+};
+const idxTriggered = new Set();
+const idxObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const name = entry.target.dataset.build;
+      if (name && !idxTriggered.has(name) && idxBuilds[name]) {
+        idxTriggered.add(name);
+        idxBuilds[name]();
+      }
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('[data-build]').forEach(el => idxObserver.observe(el));
+</script>
 </body>
 </html>
