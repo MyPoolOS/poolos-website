@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PoolOS — What's Coming</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --navy:   #0c1e2e;
-    --cyan:   #0891b2;
+    --cyan:   #22d3ee;
     --sky:    #22d3ee;
     --ice:    #ecfeff;
     --white:  #ffffff;
     --slate:  #64748b;
     --border: #e2e8f0;
-    --serif:  'DM Serif Display', Georgia, serif;
-    --sans:   'DM Sans', system-ui, sans-serif;
+    --serif:  'Inter', system-ui, sans-serif;
+    --sans:   system-ui, -apple-system, sans-serif;
     --mono:   'JetBrains Mono', monospace;
   }
 
@@ -226,7 +226,7 @@
     z-index: 1;
   }
 
-  .tl-dot.now   { color: var(--cyan); background: var(--cyan); box-shadow: 0 0 0 3px rgba(8,145,178,.2); }
+  .tl-dot.now   { color: var(--cyan); background: var(--cyan); box-shadow: 0 0 0 3px rgba(34,211,238,.2); }
   .tl-dot.soon  { color: var(--cyan); background: var(--white); }
   .tl-dot.later { color: var(--border); background: var(--white); }
   .tl-dot.hw    { color: #f97316; background: var(--white); }
@@ -283,7 +283,7 @@
 
   .item.now-card {
     background: var(--ice);
-    border-color: rgba(8,145,178,.2);
+    border-color: rgba(34,211,238,.2);
   }
 
   .item.wg-card {
@@ -309,7 +309,7 @@
     stroke-linejoin: round;
   }
 
-  .item.now-card   .item-icon { background: rgba(8,145,178,.12); }
+  .item.now-card   .item-icon { background: rgba(34,211,238,.12); }
   .item.now-card   .item-icon svg { stroke: var(--cyan); }
   .item.wg-card    .item-icon { background: rgba(34,211,238,.12); }
   .item.wg-card    .item-icon svg { stroke: var(--sky); }
@@ -562,7 +562,7 @@
 
 <!-- Nav -->
 <nav class="nav">
-  <a href="#" class="nav-logo">PoolOS</a>
+  <a href="#" class="nav-logo"><img src="logo-mark.png" alt="PoolOS" style="width:28px;height:28px;object-fit:contain;vertical-align:middle;margin-right:8px;">PoolOS</a>
   <div class="nav-links">
     <a href="#now">Available Now</a>
     <a href="#coming">Coming Soon</a>
@@ -934,7 +934,7 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-logo">PoolOS</div>
+  <div class="footer-logo"><img src="logo-mark.png" alt="PoolOS" style="width:32px;height:32px;object-fit:contain;vertical-align:middle;margin-right:10px;">PoolOS</div>
   <div class="footer-links">
     <a href="#">Support</a>
     <a href="#">Privacy</a>
