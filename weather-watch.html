@@ -223,32 +223,55 @@
 <section id="hero">
   <div class="hero-eyebrow">Weather Watch &middot; Built into PoolOS</div>
 
-  <!-- Animated combined icon -->
-  <div class="hero-icon-wrap" data-build="hero-combined">
-    <svg class="hero-svg-icon" viewBox="0 0 350 320" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer radar rings -->
-      <circle class="build-el" id="hcb-r1" cx="175" cy="145" r="155" fill="none" stroke="#142840" stroke-width="0.8" stroke-dasharray="5,5"/>
-      <circle class="build-el" id="hcb-r2" cx="175" cy="145" r="130" fill="none" stroke="#1a3355" stroke-width="1" stroke-dasharray="4,4"/>
-      <circle class="build-el" id="hcb-r3" cx="175" cy="145" r="105" fill="none" stroke="#1e4470" stroke-width="1.2" stroke-dasharray="4,4"/>
-      <!-- Shield -->
-      <path class="build-el" id="hcb-shield" d="M175,20 L100,48 L100,150 Q100,225 175,255 Q250,225 250,150 L250,48 Z" fill="#0f2236" stroke="#e8a020" stroke-width="3.5"/>
-      <!-- Inner radar -->
-      <circle class="build-el" id="hcb-r4" cx="175" cy="140" r="62" fill="none" stroke="#2a5a8a" stroke-width="1.2" stroke-dasharray="4,4"/>
-      <circle class="build-el" id="hcb-r5" cx="175" cy="140" r="32" fill="none" stroke="#3670a8" stroke-width="1.5"/>
-      <circle class="build-el" id="hcb-dot" cx="175" cy="140" r="4" fill="#3670a8"/>
-      <!-- Cloud -->
-      <ellipse class="build-el" id="hcb-c1" cx="136" cy="66" rx="22" ry="11" fill="#5a6370"/>
-      <ellipse class="build-el" id="hcb-c2" cx="150" cy="63" rx="16" ry="9" fill="#6b7280"/>
-      <ellipse class="build-el" id="hcb-c3" cx="126" cy="64" rx="14" ry="8" fill="#4b5563"/>
-      <line class="build-el" id="hcb-rain1" x1="130" y1="79" x2="126" y2="95" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round"/>
-      <line class="build-el" id="hcb-rain2" x1="142" y1="80" x2="138" y2="96" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round"/>
-      <line class="build-el" id="hcb-rain3" x1="154" y1="78" x2="150" y2="94" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- Bolt -->
-      <polygon class="build-el" id="hcb-bolt" points="180,78 167,128 174,128 166,188 190,118 182,118 188,78" fill="#fbbf24" stroke="#d4a017" stroke-width="0.5"/>
-      <!-- Thermometer -->
-      <rect class="build-el" id="hcb-t1" x="210" y="146" width="8" height="40" rx="4" fill="none" stroke="#4d9fff" stroke-width="2"/>
-      <circle class="build-el" id="hcb-t2" cx="214" cy="194" r="9" fill="#4d9fff"/>
-      <rect class="build-el" id="hcb-t3" x="212.5" y="160" width="3" height="30" fill="#4d9fff"/>
+  <!-- Radar sweep shield — combined hero icon -->
+  <div class="hero-icon-wrap">
+    <svg class="hero-svg-icon" viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="hero-clip">
+          <path d="M90 10.7 C75 22.8 52.5 32.1 30 32.1 L30 92.8 C30 131.9 56.25 160.6 90 175 C123.75 160.6 150 131.9 150 92.8 L150 32.1 C127.5 32.1 105 22.8 90 10.7Z"/>
+        </clipPath>
+        <clipPath id="hero-fz1"><polygon points="0,0 90,0 90,85 0,191"/></clipPath>
+        <clipPath id="hero-fz2"><polygon points="0,191 90,85 180,191 180,200 0,200"/></clipPath>
+        <clipPath id="hero-fz3"><polygon points="90,0 180,0 180,191 90,85"/></clipPath>
+        <radialGradient id="hero-sweep" cx="90" cy="92" r="67" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#22c55e" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#22c55e" stop-opacity="0.55"/>
+        </radialGradient>
+      </defs>
+      <g clip-path="url(#hero-clip)">
+        <path d="M90 10.7 C75 22.8 52.5 32.1 30 32.1 L30 92.8 C30 131.9 56.25 160.6 90 175 C123.75 160.6 150 131.9 150 92.8 L150 32.1 C127.5 32.1 105 22.8 90 10.7Z" fill="#0f2236"/>
+        <circle cx="90" cy="92" r="26" stroke="#22c55e" stroke-width="0.7" fill="none" opacity="0.28"/>
+        <circle cx="90" cy="92" r="46" stroke="#22c55e" stroke-width="0.7" fill="none" opacity="0.20"/>
+        <circle cx="90" cy="92" r="67" stroke="#22c55e" stroke-width="0.7" fill="none" opacity="0.13"/>
+        <path d="M90,92 L90,25 A67,67 0 0,1 148,59 Z" fill="url(#hero-sweep)" opacity="0.65">
+          <animateTransform attributeName="transform" type="rotate"
+            from="0 90 92" to="360 90 92" dur="5s" repeatCount="indefinite"/>
+        </path>
+        <g clip-path="url(#hero-fz1)"><rect x="0" y="0" width="180" height="200" fill="#6ab0e8" fill-opacity="0.06"/></g>
+        <g clip-path="url(#hero-fz2)"><rect x="0" y="0" width="180" height="200" fill="#f5c400" fill-opacity="0.05"/></g>
+        <g clip-path="url(#hero-fz3)"><rect x="0" y="0" width="180" height="200" fill="#ff6b5b" fill-opacity="0.06"/></g>
+        <g stroke="#3db87a" stroke-width="1.2" stroke-linecap="round" opacity="0.45">
+          <line x1="90" y1="14"  x2="90"  y2="85"/>
+          <line x1="90" y1="85" x2="33"  y2="152"/>
+          <line x1="90" y1="85" x2="147" y2="152"/>
+        </g>
+        <g transform="translate(40,51) scale(1.6)" stroke="#6ab0e8" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+          <path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>
+        </g>
+        <g transform="translate(71,111) scale(1.6)">
+          <polygon points="13,1 6,11 10,11 5,23 19,9 14,9 18,1" fill="none" stroke="#f5c400" stroke-width="1.05" stroke-linejoin="round"/>
+        </g>
+        <g transform="translate(100,45) scale(1.6)" stroke="#ff6b5b" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10,19 L10,6 A2,2 0 0,1 14,6 L14,19"/>
+          <circle cx="12" cy="22" r="3.5"/>
+          <line x1="14" y1="9"  x2="17" y2="9"/>
+          <line x1="14" y1="13" x2="16" y2="13"/>
+          <line x1="14" y1="17" x2="17" y2="17"/>
+        </g>
+      </g>
+      <path d="M90 10.7 C75 22.8 52.5 32.1 30 32.1 L30 92.8 C30 131.9 56.25 160.6 90 175 C123.75 160.6 150 131.9 150 92.8 L150 32.1 C127.5 32.1 105 22.8 90 10.7Z"
+            stroke="#3db87a" stroke-width="2.8" stroke-linejoin="round"/>
     </svg>
   </div>
 
@@ -274,9 +297,8 @@
   </div>
 
   <div class="hero-actions">
-    <a href="https://apps.apple.com/us/app/pool-os/id6762061986" class="btn-primary">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      Download PoolOS Free
+    <a href="https://apps.apple.com/us/app/pool-os/id6762061986" target="_blank" rel="noopener" style="display:inline-block">
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83" alt="Download on the App Store" style="height:54px;width:auto;display:block"/>
     </a>
     <a href="#tiers" class="btn-ghost">See what&rsquo;s included &darr;</a>
   </div>
@@ -294,19 +316,10 @@
       <!-- Storm Watch -->
       <div class="tier-card">
         <div style="min-height:44px;display:flex;align-items:center;gap:8px;margin-bottom:16px"><div class="tier-badge free">&#10003;&nbsp; Free &middot; Included</div></div>
-        <div data-build="tc-storm" style="min-height:72px;display:flex;align-items:flex-start;margin-bottom:12px;overflow:hidden">
-          <svg viewBox="30 18 240 100" xmlns="http://www.w3.org/2000/svg" style="width:96px;height:40px;display:block">
-            <path class="build-el" id="tc-sw-fill" d="M150,25 L75,53 L75,110 L225,110 L225,53 Z" fill="#0f2236" stroke="none"/>
-            <line class="build-el" id="tc-sw-left" x1="75" y1="110" x2="75" y2="53" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
-            <line class="build-el" id="tc-sw-right" x1="225" y1="110" x2="225" y2="53" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
-            <path class="build-el" id="tc-sw-peak" d="M75,53 L150,25 L225,53" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <line class="build-el" id="tc-sw-dashes" x1="75" y1="110" x2="225" y2="110" stroke="#e8a020" stroke-width="4" stroke-dasharray="10,7"/>
-            <ellipse class="build-el" id="tc-sw-c1" cx="146" cy="64" rx="26" ry="13" fill="#5a6370"/>
-            <ellipse class="build-el" id="tc-sw-c2" cx="163" cy="60" rx="18" ry="11" fill="#6b7280"/>
-            <ellipse class="build-el" id="tc-sw-c3" cx="134" cy="62" rx="16" ry="10" fill="#4b5563"/>
-            <line class="build-el" id="tc-sw-r1" x1="139" y1="78" x2="134" y2="100" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round"/>
-            <line class="build-el" id="tc-sw-r2" x1="153" y1="80" x2="148" y2="102" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round"/>
-            <line class="build-el" id="tc-sw-r3" x1="167" y1="77" x2="162" y2="99" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round"/>
+        <div style="min-height:90px;display:flex;align-items:flex-start;margin-bottom:12px">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:90px;display:block" stroke="#6ab0e8" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            <path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>
           </svg>
         </div>
         <div class="tier-title">Storm Watch</div>
@@ -323,17 +336,13 @@
       <!-- Weather Guard -->
       <div class="tier-card featured">
         <div style="min-height:44px;display:flex;align-items:center;gap:8px;margin-bottom:16px"><div class="tier-badge paid">&#9733;&nbsp; Pro</div></div>
-        <div data-build="tc-guard" style="min-height:72px;display:flex;align-items:flex-start;margin-bottom:12px;overflow:hidden">
-          <svg viewBox="65 28 170 175" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;display:block">
-            <path class="build-el" id="tc-wg-fill" d="M75,35 L75,90 Q75,165 150,195 Q225,165 225,90 L225,35 Z" fill="#0f2236" stroke="none"/>
-            <path class="build-el" id="tc-wg-left" d="M75,35 L75,90 Q75,165 150,195" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
-            <path class="build-el" id="tc-wg-right" d="M225,35 L225,90 Q225,165 150,195" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round"/>
-            <line class="build-el" id="tc-wg-dashes" x1="75" y1="35" x2="225" y2="35" stroke="#e8a020" stroke-width="4" stroke-dasharray="10,7"/>
-            <rect class="build-el" id="tc-wg-toutline" x="146" y="62" width="9" height="58" rx="4.5" fill="none" stroke="#4d9fff" stroke-width="2.5"/>
-            <circle class="build-el" id="tc-wg-tbulb" cx="150.5" cy="134" r="13" fill="#4d9fff"/>
-            <rect class="build-el" id="tc-wg-tfill" x="148" y="87" width="5" height="40" fill="#4d9fff"/>
-            <line class="build-el" id="tc-wg-min" x1="160" y1="90" x2="185" y2="90" stroke="#4d9fff" stroke-width="2" stroke-dasharray="3,2"/>
-            <text class="build-el" id="tc-wg-mintxt" x="189" y="94" font-size="12" fill="#4d9fff" font-weight="600" font-family="-apple-system, sans-serif">MIN</text>
+        <div style="min-height:90px;display:flex;align-items:flex-start;margin-bottom:12px">
+          <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:77px;height:90px;display:block" stroke="#ff6b5b" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10,19 L10,6 A2,2 0 0,1 14,6 L14,19"/>
+            <circle cx="12" cy="22" r="3.5"/>
+            <line x1="14" y1="9"  x2="17" y2="9"/>
+            <line x1="14" y1="13" x2="16" y2="13"/>
+            <line x1="14" y1="17" x2="17" y2="17"/>
           </svg>
         </div>
         <div class="tier-title">Weather Guard</div>
@@ -349,15 +358,11 @@
       <!-- Lightning Proximity -->
       <div class="tier-card featured">
         <div style="min-height:44px;display:flex;align-items:center;gap:8px;margin-bottom:16px"><div class="tier-badge paid">&#9889;&nbsp; Pro</div><div class="tier-coming-tag">Coming Soon</div></div>
-        <div data-build="tc-lightning" style="min-height:72px;display:flex;align-items:flex-start;margin-bottom:12px;overflow:hidden">
-          <svg viewBox="22 18 256 208" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:56px;display:block">
-            <circle class="build-el" id="tc-lp-r1" cx="150" cy="145" r="120" fill="none" stroke="#1e2a3a" stroke-width="1.5" stroke-dasharray="6,6"/>
-            <circle class="build-el" id="tc-lp-r2" cx="150" cy="145" r="92" fill="none" stroke="#1e3a5a" stroke-width="1.8" stroke-dasharray="5,5"/>
-            <circle class="build-el" id="tc-lp-r3" cx="150" cy="145" r="64" fill="none" stroke="#1e4470" stroke-width="2" stroke-dasharray="5,5"/>
-            <circle class="build-el" id="tc-lp-r4" cx="150" cy="145" r="36" fill="none" stroke="#2a5a8a" stroke-width="2" stroke-dasharray="4,4"/>
-            <circle class="build-el" id="tc-lp-r5" cx="150" cy="145" r="16" fill="none" stroke="#3670a8" stroke-width="2.5"/>
-            <circle class="build-el" id="tc-lp-dot" cx="150" cy="145" r="4" fill="#3670a8"/>
-            <polygon class="build-el" id="tc-lp-bolt" points="156,72 140,138 148,138 138,218 168,128 158,128 166,72" fill="#fbbf24" stroke="#d4a017" stroke-width="1"/>
+        <div style="min-height:90px;display:flex;align-items:flex-start;margin-bottom:12px">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:90px;display:block" stroke-linecap="round" stroke-linejoin="round">
+            <g transform="translate(12,12) scale(0.78) translate(-12,-12)">
+              <polygon points="13,1 6,11 10,11 5,23 19,9 14,9 18,1" fill="none" stroke="#f5c400" stroke-width="1.0" stroke-linejoin="round"/>
+            </g>
           </svg>
         </div>
         <div class="tier-title">Lightning Proximity</div>
@@ -381,21 +386,10 @@
     <div class="two-col">
 
       <div class="col-text">
-        <div class="section-svg-icon" style="justify-content:flex-start;margin-bottom:8px" data-build="storm">
-          <svg viewBox="55 35 195 100" xmlns="http://www.w3.org/2000/svg" style="width:195px;height:100px">
-            <g>
-              <path class="build-el" id="sw-fill" d="M150,45 L75,73 L75,130 L225,130 L225,73 Z" fill="#0f2236" stroke="none"/>
-              <line class="build-el" id="sw-left" x1="75" y1="130" x2="75" y2="73" stroke="#e8a020" stroke-width="3.5" stroke-linecap="round"/>
-              <line class="build-el" id="sw-right" x1="225" y1="130" x2="225" y2="73" stroke="#e8a020" stroke-width="3.5" stroke-linecap="round"/>
-              <path class="build-el" id="sw-peak" d="M75,73 L150,45 L225,73" fill="none" stroke="#e8a020" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <line class="build-el" id="sw-dashes" x1="75" y1="130" x2="225" y2="130" stroke="#e8a020" stroke-width="3.5" stroke-dasharray="10,7"/>
-              <ellipse class="build-el" id="sw-c1" cx="146" cy="82" rx="26" ry="13" fill="#5a6370"/>
-              <ellipse class="build-el" id="sw-c2" cx="163" cy="78" rx="18" ry="11" fill="#6b7280"/>
-              <ellipse class="build-el" id="sw-c3" cx="134" cy="80" rx="16" ry="10" fill="#4b5563"/>
-              <line class="build-el" id="sw-r1" x1="139" y1="96" x2="134" y2="118" stroke="#6b7280" stroke-width="2.2" stroke-linecap="round"/>
-              <line class="build-el" id="sw-r2" x1="153" y1="98" x2="148" y2="120" stroke="#6b7280" stroke-width="2.2" stroke-linecap="round"/>
-              <line class="build-el" id="sw-r3" x1="167" y1="95" x2="162" y2="117" stroke="#6b7280" stroke-width="2.2" stroke-linecap="round"/>
-            </g>
+        <div style="margin-bottom:16px">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:90px;height:90px;display:block" stroke="#6ab0e8" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            <path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>
           </svg>
         </div>
         <h2 class="section-title">Storm Watch</h2>
@@ -489,19 +483,13 @@
 
       <!-- Right: animated SVG + detail cards -->
       <div>
-        <div data-build="guard" style="display:flex;justify-content:center;margin-bottom:28px">
-          <svg viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg" style="width:240px;height:240px">
-            <g>
-              <path class="build-el" id="wg-fill" d="M75,55 L75,110 Q75,185 150,215 Q225,185 225,110 L225,55 Z" fill="#0f2236" stroke="none"/>
-              <path class="build-el" id="wg-left" d="M75,55 L75,110 Q75,185 150,215" fill="none" stroke="#e8a020" stroke-width="3.5" stroke-linecap="round"/>
-              <path class="build-el" id="wg-right" d="M225,55 L225,110 Q225,185 150,215" fill="none" stroke="#e8a020" stroke-width="3.5" stroke-linecap="round"/>
-              <line class="build-el" id="wg-dashes" x1="75" y1="55" x2="225" y2="55" stroke="#e8a020" stroke-width="3.5" stroke-dasharray="10,7"/>
-              <rect class="build-el" id="wg-toutline" x="146" y="80" width="9" height="58" rx="4.5" fill="none" stroke="#4d9fff" stroke-width="2.5"/>
-              <circle class="build-el" id="wg-tbulb" cx="150.5" cy="152" r="13" fill="#4d9fff"/>
-              <rect class="build-el" id="wg-tfill" x="148" y="105" width="5" height="40" fill="#4d9fff"/>
-              <line class="build-el" id="wg-min" x1="160" y1="108" x2="183" y2="108" stroke="#4d9fff" stroke-width="2" stroke-dasharray="3,2"/>
-              <text class="build-el" id="wg-mintxt" x="187" y="112" font-size="11" fill="#4d9fff" font-weight="600" font-family="-apple-system, sans-serif">MIN</text>
-            </g>
+        <div style="display:flex;justify-content:center;margin-bottom:28px">
+          <svg viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:130px;height:152px" stroke="#ff6b5b" stroke-width="0.65" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10,19 L10,6 A2,2 0 0,1 14,6 L14,19"/>
+            <circle cx="12" cy="22" r="3.5"/>
+            <line x1="14" y1="9"  x2="17" y2="9"/>
+            <line x1="14" y1="13" x2="16" y2="13"/>
+            <line x1="14" y1="17" x2="17" y2="17"/>
           </svg>
         </div>
 
@@ -555,14 +543,14 @@
         <div class="lightning-visual">
           <div data-build="lightning" style="display:flex;justify-content:center;margin-bottom:20px">
             <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="width:200px;height:200px">
-              <g>
-                <circle class="build-el" id="lp-r1" cx="150" cy="145" r="120" fill="none" stroke="#1e3a5a" stroke-width="1.2" stroke-dasharray="6,6"/>
-                <circle class="build-el" id="lp-r2" cx="150" cy="145" r="95" fill="none" stroke="#1e4470" stroke-width="1.5" stroke-dasharray="5,5"/>
-                <circle class="build-el" id="lp-r3" cx="150" cy="145" r="70" fill="none" stroke="#2a5a8a" stroke-width="1.8" stroke-dasharray="5,5"/>
-                <circle class="build-el" id="lp-r4" cx="150" cy="145" r="45" fill="none" stroke="#3670a8" stroke-width="2" stroke-dasharray="4,4"/>
-                <circle class="build-el" id="lp-r5" cx="150" cy="145" r="20" fill="none" stroke="#4d88c8" stroke-width="2.5"/>
-                <circle class="build-el" id="lp-dot" cx="150" cy="145" r="5" fill="#4d88c8"/>
-                <polygon class="build-el" id="lp-bolt" points="156,75 140,140 148,140 138,215 168,128 158,128 166,75" fill="#fbbf24" stroke="#d4a017" stroke-width="0.8"/>
+              <circle class="build-el" id="lp-r1" cx="150" cy="145" r="120" fill="none" stroke="#1e3a5a" stroke-width="1.2" stroke-dasharray="6,6"/>
+              <circle class="build-el" id="lp-r2" cx="150" cy="145" r="95" fill="none" stroke="#1e4470" stroke-width="1.5" stroke-dasharray="5,5"/>
+              <circle class="build-el" id="lp-r3" cx="150" cy="145" r="70" fill="none" stroke="#2a5a8a" stroke-width="1.8" stroke-dasharray="5,5"/>
+              <circle class="build-el" id="lp-r4" cx="150" cy="145" r="45" fill="none" stroke="#3670a8" stroke-width="2" stroke-dasharray="4,4"/>
+              <circle class="build-el" id="lp-r5" cx="150" cy="145" r="20" fill="none" stroke="#4d88c8" stroke-width="2.5"/>
+              <circle class="build-el" id="lp-dot" cx="150" cy="145" r="5" fill="#4d88c8"/>
+              <g class="build-el" id="lp-bolt" transform="translate(90,85) scale(5)">
+                <polygon points="13,1 6,11 10,11 5,23 19,9 14,9 18,1" fill="none" stroke="#f5c400" stroke-width="0.55" stroke-linejoin="round"/>
               </g>
             </svg>
           </div>
@@ -592,27 +580,64 @@
   <div class="bt-inner">
     <h2 class="bt-title">Better Together</h2>
     <p class="bt-sub">Three tiers. One shield. Complete weather protection for your pool.</p>
-    <div class="bt-icon-wrap" data-build="combined">
-      <svg viewBox="0 0 350 320" xmlns="http://www.w3.org/2000/svg">
-        <g>
-          <circle class="build-el" id="cb-r1" cx="175" cy="140" r="155" fill="none" stroke="#142840" stroke-width="0.8" stroke-dasharray="5,5"/>
-          <circle class="build-el" id="cb-r2" cx="175" cy="140" r="130" fill="none" stroke="#1a3355" stroke-width="1" stroke-dasharray="4,4"/>
-          <circle class="build-el" id="cb-r3" cx="175" cy="140" r="105" fill="none" stroke="#1e4470" stroke-width="1.2" stroke-dasharray="4,4"/>
-          <path class="build-el" id="cb-shield" d="M175,20 L100,48 L100,150 Q100,225 175,255 Q250,225 250,150 L250,48 Z" fill="#0f2236" stroke="#e8a020" stroke-width="3.5"/>
-          <circle class="build-el" id="cb-r4" cx="175" cy="140" r="62" fill="none" stroke="#2a5a8a" stroke-width="1.2" stroke-dasharray="4,4"/>
-          <circle class="build-el" id="cb-r5" cx="175" cy="140" r="32" fill="none" stroke="#3670a8" stroke-width="1.5"/>
-          <circle class="build-el" id="cb-dot" cx="175" cy="140" r="4" fill="#3670a8"/>
-          <ellipse class="build-el" id="cb-c1" cx="136" cy="66" rx="22" ry="11" fill="#5a6370"/>
-          <ellipse class="build-el" id="cb-c2" cx="150" cy="63" rx="16" ry="9" fill="#6b7280"/>
-          <ellipse class="build-el" id="cb-c3" cx="126" cy="64" rx="14" ry="8" fill="#4b5563"/>
-          <line class="build-el" id="cb-rain1" x1="130" y1="79" x2="126" y2="95" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round"/>
-          <line class="build-el" id="cb-rain2" x1="142" y1="80" x2="138" y2="96" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round"/>
-          <line class="build-el" id="cb-rain3" x1="154" y1="78" x2="150" y2="94" stroke="#6b7280" stroke-width="1.8" stroke-linecap="round"/>
-          <polygon class="build-el" id="cb-bolt" points="180,78 167,128 174,128 166,188 190,118 182,118 188,78" fill="#fbbf24" stroke="#d4a017" stroke-width="0.5"/>
-          <rect class="build-el" id="cb-t1" x="210" y="146" width="8" height="40" rx="4" fill="none" stroke="#4d9fff" stroke-width="2"/>
-          <circle class="build-el" id="cb-t2" cx="214" cy="194" r="9" fill="#4d9fff"/>
-          <rect class="build-el" id="cb-t3" x="212.5" y="160" width="3" height="30" fill="#4d9fff"/>
+    <div class="bt-icon-wrap">
+      <!-- Radar sweep shield — three products, one animated icon -->
+      <svg viewBox="0 0 180 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="bt-clip">
+            <path d="M90 10.7 C75 22.8 52.5 32.1 30 32.1 L30 92.8 C30 131.9 56.25 160.6 90 175 C123.75 160.6 150 131.9 150 92.8 L150 32.1 C127.5 32.1 105 22.8 90 10.7Z"/>
+          </clipPath>
+          <clipPath id="bt-fz1"><polygon points="0,0 90,0 90,85 0,191"/></clipPath>
+          <clipPath id="bt-fz2"><polygon points="0,191 90,85 180,191 180,200 0,200"/></clipPath>
+          <clipPath id="bt-fz3"><polygon points="90,0 180,0 180,191 90,85"/></clipPath>
+          <radialGradient id="bt-sweep" cx="90" cy="92" r="67" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#22c55e" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#22c55e" stop-opacity="0.55"/>
+          </radialGradient>
+        </defs>
+        <g clip-path="url(#bt-clip)">
+          <!-- Shield fill -->
+          <path d="M90 10.7 C75 22.8 52.5 32.1 30 32.1 L30 92.8 C30 131.9 56.25 160.6 90 175 C123.75 160.6 150 131.9 150 92.8 L150 32.1 C127.5 32.1 105 22.8 90 10.7Z" fill="#0f2236"/>
+          <!-- Radar rings -->
+          <circle cx="90" cy="92" r="26" stroke="#22c55e" stroke-width="0.7" fill="none" opacity="0.28"/>
+          <circle cx="90" cy="92" r="46" stroke="#22c55e" stroke-width="0.7" fill="none" opacity="0.20"/>
+          <circle cx="90" cy="92" r="67" stroke="#22c55e" stroke-width="0.7" fill="none" opacity="0.13"/>
+          <!-- Animated sweep wedge -->
+          <path d="M90,92 L90,25 A67,67 0 0,1 148,59 Z" fill="url(#bt-sweep)" opacity="0.65">
+            <animateTransform attributeName="transform" type="rotate"
+              from="0 90 92" to="360 90 92" dur="5s" repeatCount="indefinite"/>
+          </path>
+          <!-- Zone tints -->
+          <g clip-path="url(#bt-fz1)"><rect x="0" y="0" width="180" height="200" fill="#6ab0e8" fill-opacity="0.06"/></g>
+          <g clip-path="url(#bt-fz2)"><rect x="0" y="0" width="180" height="200" fill="#f5c400" fill-opacity="0.05"/></g>
+          <g clip-path="url(#bt-fz3)"><rect x="0" y="0" width="180" height="200" fill="#ff6b5b" fill-opacity="0.06"/></g>
+          <!-- Inverted-Y dividers -->
+          <g stroke="#3db87a" stroke-width="1.2" stroke-linecap="round" opacity="0.45">
+            <line x1="90" y1="14"  x2="90"  y2="85"/>
+            <line x1="90" y1="85" x2="33"  y2="152"/>
+            <line x1="90" y1="85" x2="147" y2="152"/>
+          </g>
+          <!-- Cloud — Storm Watch zone -->
+          <g transform="translate(40,51) scale(1.6)" stroke="#6ab0e8" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/>
+            <path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>
+          </g>
+          <!-- Lightning bolt -->
+          <g transform="translate(71,111) scale(1.6)">
+            <polygon points="13,1 6,11 10,11 5,23 19,9 14,9 18,1" fill="none" stroke="#f5c400" stroke-width="1.05" stroke-linejoin="round"/>
+          </g>
+          <!-- Thermometer — WeatherGuard zone -->
+          <g transform="translate(100,45) scale(1.6)" stroke="#ff6b5b" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10,19 L10,6 A2,2 0 0,1 14,6 L14,19"/>
+            <circle cx="12" cy="22" r="3.5"/>
+            <line x1="14" y1="9"  x2="17" y2="9"/>
+            <line x1="14" y1="13" x2="16" y2="13"/>
+            <line x1="14" y1="17" x2="17" y2="17"/>
+          </g>
         </g>
+        <!-- Green outline -->
+        <path d="M90 10.7 C75 22.8 52.5 32.1 30 32.1 L30 92.8 C30 131.9 56.25 160.6 90 175 C123.75 160.6 150 131.9 150 92.8 L150 32.1 C127.5 32.1 105 22.8 90 10.7Z"
+              stroke="#3db87a" stroke-width="2.8" stroke-linejoin="round"/>
       </svg>
     </div>
     <div class="bt-wordmark" id="bt-wordmark">WEATHER WATCH</div>
