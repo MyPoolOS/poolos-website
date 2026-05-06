@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>PoolOS — Universal Pool Control</title>
-<meta name="description" content="Pool brands make great hardware. Their apps, not so much. PoolOS is the fast, reliable, universal pool controller — Pentair ScreenLogic today, Jandy and Hayward coming soon."/>
+<meta name="description" content="Pool brands make great hardware. Their apps, not so much. PoolOS is the fast, reliable Pentair ScreenLogic controller — local-first pool control; optional Storm Watch and Premium only use PoolOS-operated services as described in our privacy policy."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -320,7 +320,7 @@
   <div class="wg-inner">
     <div class="wg-badge"><span style="color:var(--green)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/></svg></span><span class="wg-badge-text" style="color:var(--green)">Storm Watch &middot; Free</span></div>
     <h2 class="wg-title">Your pool knows when<br/>a storm is <span>coming.</span></h2>
-    <p class="wg-sub">Push notifications before severe weather arrives &mdash; not after. No subscription, no account, no setup beyond enabling notifications. Built into every PoolOS download.</p>
+    <p class="wg-sub">Push notifications before severe weather arrives &mdash; not after. Free: no subscription, no PoolOS login. Turn on <strong>Storm Watch</strong> in Settings (with pool location for alerts). Built into every PoolOS download.</p>
     <div class="wg-cards">
       <div class="wg-card">
         <div class="wg-card-title">Tornado &amp; thunderstorm warnings</div>
@@ -331,8 +331,8 @@
         <div class="wg-card-text">The events that matter when you have outdoor equipment running. Know before your pool equipment has to deal with it.</div>
       </div>
       <div class="wg-card">
-        <div class="wg-card-title">Automatic. Always on.</div>
-        <div class="wg-card-text">Powered by NOAA/NWS &mdash; no third-party data fees, no ongoing setup. Enable notifications once and Storm Watch does the rest.</div>
+        <div class="wg-card-title">Powered by official alerts</div>
+        <div class="wg-card-text">NOAA / NWS severe weather products &mdash; no separate weather service account. After you opt in, alerts run in the background.</div>
       </div>
     </div>
     <div class="wg-exclusive"><div class="wg-dot" style="background:var(--green)"></div>Free for every PoolOS user &mdash; no subscription required</div>
@@ -454,7 +454,7 @@
           <tr style="border-bottom:1px solid #f1f5f9;background:#fafafa">
             <td style="padding:13px 12px;font-weight:500;color:#0c1e2e">Cloud dependency</td>
             <td style="padding:13px 12px;text-align:center;color:#94a3b8">Cloud required — one expired SSL cert kills everything</td>
-            <td style="padding:13px 12px;text-align:center;color:#007aff;font-weight:600">Local-first, works without internet</td>
+            <td style="padding:13px 12px;text-align:center;color:#007aff;font-weight:600">Local-first &mdash; no PoolOS cloud for equipment control (remote uses Pentair when you choose it)</td>
           </tr>
           <tr>
             <td style="padding:13px 12px;font-weight:500;color:#0c1e2e">Heat pump protection</td>
@@ -475,26 +475,27 @@
     <div class="two-col reverse">
       <div class="col-text">
         <div class="section-eyebrow">Privacy</div>
-        <h2 class="section-title">We don't collect your data.</h2>
-        <p class="section-body">PoolOS connects to your Pentair ScreenLogic adapter over Pentair's remote gateway. No account required. Your data stays on your device.</p>
-        <p class="section-body">Same ScreenLogic protocol as the official app — just a better experience on top of it.</p>
+        <h2 class="section-title">Pool control stays yours.</h2>
+        <p class="section-body">Day-to-day equipment control travels between your iPhone and your Pentair system over your Wi-Fi (and Pentair&rsquo;s relay when you&rsquo;re away). PoolOS does <strong>not</strong> send that pool traffic to PoolOS-operated servers.</p>
+        <p class="section-body"><strong>Optional</strong> features are explicit: free <strong>Storm Watch</strong> sends push registration and pool location so alerts can reach your phone; <strong>PoolOS Premium</strong> uses Apple for payment and our entitlement service for grants &mdash; never third-party ad or analytics SDKs, and we don&rsquo;t sell personal information. <a href="/privacy.html" style="color:var(--blue);text-decoration:none;font-weight:600">Read the full Privacy Policy</a>.</p>
+        <p class="section-body">No PoolOS login required to run your pool &mdash; same ScreenLogic pathway as Pentair, with a better experience.</p>
       </div>
       <div class="col-visual">
         <div class="local-visual">
           <div class="local-row">
             <div class="local-icon" style="color:var(--blue)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="10" x2="12" y2="22"/><path d="M8.5 6.5a5 5 0 0 0 0 7"/><path d="M15.5 6.5a5 5 0 0 1 0 7"/><path d="M5 3.5a10 10 0 0 0 0 13"/><path d="M19 3.5a10 10 0 0 1 0 13"/><circle cx="12" cy="9" r="1" fill="currentColor" stroke="none"/></svg></div>
-            <div><div class="local-label">Remote Connection</div><div class="local-desc">Connects via Pentair's remote gateway</div></div>
+            <div><div class="local-label">Equipment control</div><div class="local-desc">Stays on your LAN or Pentair relay &mdash; not uploaded to PoolOS</div></div>
             <div class="check">✓</div>
           </div>
           <div class="local-row">
-            <div class="local-icon" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
-            <div><div class="local-label">Cloud Account</div><div class="local-desc">No sign-up, no server</div></div>
-            <div class="cross">✗</div>
+            <div class="local-icon" style="color:var(--green)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div><div class="local-label">PoolOS login</div><div class="local-desc">Not required for everyday pool control</div></div>
+            <div class="check">✓</div>
           </div>
           <div class="local-row">
-            <div class="local-icon" style="color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
-            <div><div class="local-label">Data Collection</div><div class="local-desc">Zero data collected or shared</div></div>
-            <div class="cross">✗</div>
+            <div class="local-icon" style="color:var(--green)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><div class="local-label">Ads &amp; brokers</div><div class="local-desc">No ad SDKs; we don&rsquo;t sell personal info</div></div>
+            <div class="check">✓</div>
           </div>
         </div>
       </div>
