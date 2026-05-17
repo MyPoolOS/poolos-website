@@ -15,4 +15,4 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -p 22 sh00129.hostgator.com >> ~/.ssh/known_hosts
           ssh -p 22 nhqxwzte@sh00129.hostgator.com \
-            "cd /home1/nhqxwzte/public_html/website_2da8ad2a && git pull"
+            "cd /home1/nhqxwzte/public_html/mypoolos_app && git pull"
