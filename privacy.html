@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Privacy Policy — PoolOS</title>
-<meta name="description" content="PoolOS privacy policy: local pool control by default; optional Storm Watch and PoolOS Premium only use PoolOS-operated services as described here — no PoolOS login for core control; no ad SDKs or data brokers."/>
+<meta name="description" content="PoolOS privacy policy: local pool control by default; optional Storm Watch and PoolOS Pro only use PoolOS-operated services as described here — no PoolOS login for core control; no ad SDKs or data brokers."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -99,7 +99,7 @@
 <div class="page-header">
   <div class="page-eyebrow">Legal</div>
   <h1 class="page-title">Privacy Policy</h1>
-  <p class="page-sub">Everyday pool control stays on your network. Optional <strong>Storm Watch</strong> (free alerts) and <strong>PoolOS Premium</strong> use PoolOS-operated services only as described here — no ads, no data brokers.</p>
+  <p class="page-sub">Everyday pool control stays on your network. Optional <strong>Storm Watch</strong> (free alerts) and <strong>PoolOS Pro</strong> use PoolOS-operated services only as described here — no ads, no data brokers.</p>
 </div>
 
 <!-- CONTENT -->
@@ -118,7 +118,7 @@
       </div>
       <div>
         <div class="summary-label">PoolOS account</div>
-        <div class="summary-value">No sign-up or PoolOS login for everyday pool control. Premium is purchased through Apple.</div>
+        <div class="summary-value">No sign-up or PoolOS login for everyday pool control. <strong>PoolOS Pro</strong> is purchased through Apple.</div>
       </div>
       <span class="badge-none" style="background:rgba(0,122,255,.12);color:var(--blue-dk)">Core: none</span>
     </div>
@@ -167,17 +167,17 @@
       <span class="badge-none">No</span>
     </div>
 
-    <div class="summary-subhead">PoolOS Premium (paid subscription)</div>
+    <div class="summary-subhead">PoolOS Pro (paid subscription)</div>
 
     <div class="summary-row">
       <div class="summary-icon" style="background:rgba(147,51,234,.12);color:#7c3aed">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
       </div>
       <div>
-        <div class="summary-label">Premium entitlements &amp; purchases</div>
-        <div class="summary-value">Hashed ID and subscription/grant checks via entitlements.mypoolos.app (not your Apple ID). Bridge hardware may report serial for bundled Premium. Paid features such as Weather Guard use air temperature from your pool equipment over the same PoolOS connection as ordinary control.</div>
+        <div class="summary-label">Pro entitlements &amp; purchases</div>
+        <div class="summary-value">Hashed ID and subscription/grant checks via entitlements.mypoolos.app (not your Apple ID). Bridge hardware may report serial for bundled Pro access. Paid features such as Weather Guard use air temperature from your pool equipment over the same PoolOS connection as ordinary control.</div>
       </div>
-      <span class="badge-none" style="background:rgba(147,51,234,.12);color:#5b21b6">Premium</span>
+      <span class="badge-none" style="background:rgba(147,51,234,.12);color:#5b21b6">Pro</span>
     </div>
   </div>
 
@@ -186,7 +186,7 @@
     <h2>Overview</h2>
     <p>PoolOS ("the app") is a third‑party interface for Pentair ScreenLogic‑compatible pool systems, developed and maintained by Chad Baugh. You do <strong>not</strong> need a PoolOS account to control your pool.</p>
     <p><strong>Core use (default):</strong> commands and live status for your equipment go between your iPhone and your pool hardware on your network (ScreenLogic adapter or a PoolOS Bridge), or through <strong>Pentair’s</strong> ScreenLogic relay when you connect away from home. PoolOS does not send that pool‑control traffic to PoolOS‑operated servers.</p>
-    <p>In Settings, <strong>Weather Watch</strong> groups weather-related toggles; <strong>Storm Watch</strong> (severe weather alerts) is <strong>free</strong> and opt‑in. <strong>PoolOS Premium</strong> unlocks separate paid capabilities (billing through Apple). Only Storm Watch and Premium entitlements rely on PoolOS‑operated internet services — described in those sections.</p>
+    <p>In Settings, <strong>Weather Watch</strong> groups weather-related toggles; <strong>Storm Watch</strong> (severe weather alerts) is <strong>free</strong> and opt‑in. <strong>PoolOS Pro</strong> unlocks separate paid capabilities (billing through Apple). Only Storm Watch and Pro entitlements rely on PoolOS‑operated internet services — described in those sections.</p>
     <p><strong>Installer / operator tooling</strong> (<code>servicing.mypoolos.app</code>) is a separate browser portal (Cloudflare Access + Google sign‑in) used to run the business — it is <strong>not</strong> required to control your pool from the PoolOS app.</p>
   </div>
 
@@ -212,22 +212,22 @@
     </ul>
     <p>The app may issue an occasional <strong>recovery</strong> HTTPS request to poll current alert state (for example after a long background). On the default PoolOS service, that request can include your push token inside the URL path over TLS — treated as a device identifier, not shared for advertising.</p>
     <p>By default the app uses our hosted endpoint (<strong>weather.mypoolos.app</strong>). An <strong>advanced “Backend URL”</strong> field in Settings lets power users point Storm Watch at another compatible server; PoolOS is not responsible for that host’s privacy practices.</p>
-    <p>Weather and lightning data comes from reputable providers configured for the service (for example meteorological feeds). PoolOS uses that output only to evaluate alerts for your configured location — not for advertising.</p>
+    <p>On the default PoolOS weather service, <strong>Storm Watch</strong> evaluates <strong>NOAA / National Weather Service</strong> severe-weather products for your configured coordinates (push payloads can include the official headline text). Optional lightning monitoring &mdash; including strike-distance features when enabled &mdash; may also use <strong>Tomorrow.io</strong> severe-weather / lightning event data and other strike feeds the service operator configures; a given deployment&rsquo;s mix can surface in operator diagnostics (for example <code>alert_provider</code> / <code>strike_provider</code> on the service health endpoint). PoolOS uses that output only to evaluate safety alerts for your location &mdash; not for advertising.</p>
   </div>
 
   <div class="policy-section">
-    <h2>PoolOS Premium &amp; purchases (optional)</h2>
-    <p>Premium subscriptions are purchased through <strong>Apple In‑App Purchase</strong>; Apple handles payment and subscription status for billing. PoolOS receives entitlement status via StoreKit on your device.</p>
+    <h2>PoolOS Pro &amp; purchases (optional)</h2>
+    <p><strong>PoolOS Pro</strong> subscriptions are purchased through <strong>Apple In‑App Purchase</strong>; Apple handles payment and subscription status for billing. PoolOS receives entitlement status via StoreKit on your device. In‑App Purchase products may still use internal App Store identifiers (for example names containing &ldquo;premium&rdquo;); customer-facing paid features are branded <strong>PoolOS Pro</strong>.</p>
     <p>Paid features can include heat‑pump <strong>Weather Guard</strong> (under Weather Watch in Settings). Weather Guard evaluates outdoor air temperature from your pool equipment over your normal PoolOS connection (local network or Pentair relay) — it does not upload a separate pool‑telemetry feed to PoolOS for that purpose.</p>
     <p>To support features like loyalty grants (for example introductory offers tied to installs or bridges) and redeemable codes, the app may contact <strong>entitlements.mypoolos.app</strong> (also Cloudflare‑hosted). We use a stable, random identifier stored on your device and a cryptographic hash derived with a salt — we do not receive your Apple ID or name from PoolOS code for those checks.</p>
-    <p>When you activate a <strong>PoolOS Bridge</strong>, the bridge software (not the iPhone UI) may send the same style of hashed identifier plus a <strong>bridge serial</strong> to entitlements so bundled Premium time can be credited and stacked per device policy.</p>
-    <p>Premium state may also be synced with Apple‑sent subscription events according to Apple’s Developer and App Store guidelines.</p>
+    <p>When you activate a <strong>PoolOS Bridge</strong>, the bridge software (not the iPhone UI) may send the same style of hashed identifier plus a <strong>bridge serial</strong> to entitlements so bundled Pro access can be credited and stacked per device policy.</p>
+    <p>Pro subscription state may also be synced with Apple‑sent subscription events according to Apple’s Developer and App Store guidelines.</p>
   </div>
 
   <div class="policy-section">
     <h2>PoolOS Bridge setup (Bluetooth)</h2>
     <p>If you set up a bridge with Bluetooth, Wi‑Fi network names/passwords are sent over Bluetooth to your bridge locally for provisioning. PoolOS does not store your Wi‑Fi password on PoolOS servers.</p>
-    <p>When a bridge first connects to the internet successfully, it may call our entitlement service so Premium included with hardware is applied (see <strong>Premium</strong> above) — that path does not upload your pool control telemetry.</p>
+    <p>When a bridge first connects to the internet successfully, it may call our entitlement service so Pro access included with hardware is applied (see <strong>PoolOS Pro</strong> above) — that path does not upload your pool control telemetry.</p>
   </div>
 
   <div class="policy-section">
@@ -238,7 +238,7 @@
 
   <div class="policy-section">
     <h2>Retention &amp; security</h2>
-    <p>Server‑side records for <strong>Storm Watch</strong> and <strong>Premium entitlements</strong> exist only where needed to run those services (for example push registrations, entitlement rows, webhook audit). Reasonable safeguards protect those systems.</p>
+    <p>Server‑side records for <strong>Storm Watch</strong> and <strong>Pro entitlements</strong> exist only where needed to run those services (for example push registrations, entitlement rows, webhook audit). Reasonable safeguards protect those systems.</p>
   </div>
 
   <div class="policy-section">
@@ -263,7 +263,10 @@
   <div class="footer-logo">PoolOS</div>
   <div class="footer-sub">Modern Pentair Pool Control</div>
   <div class="footer-links">
+    <a href="https://mypoolos.app/">Home</a>
     <a href="https://mypoolos.app/privacy.html">Privacy Policy</a>
+    <a href="https://mypoolos.app/poolos-roadmap-public.html">Roadmap</a>
+    <a href="https://mypoolos.app/support.php">Support</a>
     <a href="mailto:info@mypoolos.app">Contact</a>
   </div>
   <div class="footer-copy">© 2026 Chad Baugh. All rights reserved.</div>

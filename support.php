@@ -208,6 +208,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="footer-sub">Modern Pentair Pool Control</div>
   <div class="footer-links">
     <a href="https://mypoolos.app/privacy.html">Privacy Policy</a>
+    <a href="https://mypoolos.app/poolos-roadmap-public.html">Roadmap</a>
     <a href="https://mypoolos.app/support.php">Support</a>
     <a href="mailto:info@mypoolos.app">Contact</a>
   </div>
