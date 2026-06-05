@@ -220,7 +220,7 @@
   <div class="policy-section">
     <h2>PoolOS Pro &amp; purchases (optional)</h2>
     <p><strong>PoolOS Pro</strong> subscriptions are purchased through <strong>Apple In‑App Purchase</strong>; Apple handles payment and subscription status for billing. PoolOS receives entitlement status via StoreKit on your device. In‑App Purchase products may still use internal App Store identifiers (for example names containing &ldquo;premium&rdquo;); customer-facing paid features are branded <strong>PoolOS Pro</strong>.</p>
-    <p>Paid features can include heat‑pump <strong>Weather Guard</strong> (under Weather Watch in Settings). Weather Guard evaluates outdoor air temperature from your pool equipment over your normal PoolOS connection (local network or Pentair relay) — it does not upload a separate pool‑telemetry feed to PoolOS for that purpose.</p>
+    <p>Paid features can include heat‑pump <strong>Weather Guard</strong> (under Weather Watch in Settings). When you enable Weather Guard, PoolOS Pro syncs your settings to <strong>weather.mypoolos.app</strong> (Cloudflare‑hosted) so one cloud decision runs for your pool — including your device push token, approximate pool location, threshold/profile choices, and your pool identifier. If you use a <strong>PoolOS Bridge</strong>, automation can run through your bridge without uploading controller passwords. If you connect directly to Pentair ScreenLogic and opt in, the app may send your ScreenLogic system name and optional controller password (encrypted at rest on our server) so the cloud service can suppress or restore heat when your phone is offline — the same Pentair relay pathway Pentair’s apps use. Weather Guard does not sell this data or use it for advertising.</p>
     <p>To support features like loyalty grants (for example introductory offers tied to installs or bridges) and redeemable codes, the app may contact <strong>entitlements.mypoolos.app</strong> (also Cloudflare‑hosted). We use a stable, random identifier stored on your device and a cryptographic hash derived with a salt — we do not receive your Apple ID or name from PoolOS code for those checks.</p>
     <p>When you activate a <strong>PoolOS Bridge</strong>, the bridge software (not the iPhone UI) may send the same style of hashed identifier plus a <strong>bridge serial</strong> to entitlements so bundled Pro access can be credited and stacked per device policy.</p>
     <p>Pro subscription state may also be synced with Apple‑sent subscription events according to Apple’s Developer and App Store guidelines.</p>
@@ -240,7 +240,7 @@
 
   <div class="policy-section">
     <h2>Retention &amp; security</h2>
-    <p>Server‑side records for <strong>Storm Watch</strong> and <strong>Pro entitlements</strong> exist only where needed to run those services (for example push registrations, entitlement rows, webhook audit). Reasonable safeguards protect those systems.</p>
+    <p>Server‑side records for <strong>Storm Watch</strong>, <strong>Weather Guard</strong>, and <strong>Pro entitlements</strong> exist only where needed to run those services (for example push registrations, Weather Guard pool configuration, entitlement rows, webhook audit). Reasonable safeguards protect those systems.</p>
   </div>
 
   <div class="policy-section">
