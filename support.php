@@ -219,7 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <a href="https://mypoolos.app/support.php">Support</a>
     <a href="mailto:info@mypoolos.app">Contact</a>
   </div>
-  <div class="footer-copy">© 2026 Chad Baugh. All rights reserved.</div>
+  <div class="footer-copy">© 2026 Chad Baugh. All rights reserved. Patent pending.</div>
 </footer>
 
 </body>
