@@ -123,6 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </a>
   <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:flex-end">
     <a href="/" class="nav-link">About</a>
+    <a href="/weather-watch.html" class="nav-link">Weather Watch</a>
     <a href="/poolos-roadmap-public.html" class="nav-link">Roadmap</a>
     <a href="/support.php" class="nav-link active">Support</a>
     <a href="https://apps.apple.com/us/app/pool-os/id6762061986">
@@ -215,6 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="footer-sub">Modern Pentair Pool Control</div>
   <div class="footer-links">
     <a href="https://mypoolos.app/privacy.html">Privacy Policy</a>
+    <a href="/weather-watch.html">Weather Watch</a>
     <a href="https://mypoolos.app/poolos-roadmap-public.html">Roadmap</a>
     <a href="https://mypoolos.app/support.php">Support</a>
     <a href="mailto:info@mypoolos.app">Contact</a>
