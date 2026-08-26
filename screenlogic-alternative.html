@@ -69,17 +69,18 @@
   .pain-fix strong{color:var(--text)}
 
   /* ── COMPARISON TABLE ── */
-  #compare{background:var(--bg)}
-  .cmp-wrap{overflow-x:auto;margin-top:32px}
-  .cmp{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;background:var(--white);border-radius:14px;overflow:hidden}
-  .cmp th{padding:12px;color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
-  .cmp th.us{color:var(--blue);font-weight:700}
-  .cmp td{padding:13px 12px}
-  .cmp td.feat{font-weight:500;color:var(--navy)}
-  .cmp td.old{text-align:center;color:#94a3b8}
-  .cmp td.new{text-align:center;color:var(--blue);font-weight:600}
-  .cmp tr{border-bottom:1px solid #f1f5f9}
-  .cmp tr:nth-child(even){background:#fafafa}
+  #compare{background:#fff}
+  .cmp-wrap{overflow-x:auto;margin-top:40px}
+  .cmp{width:100%;border-collapse:collapse;font-size:15px;line-height:1.45;background:#fff}
+  .cmp th{text-align:left;padding:0 20px 16px 0;font-size:14px;font-weight:600;color:var(--text);letter-spacing:-.15px;border-bottom:1px solid #e8e8ed}
+  .cmp th:first-child{width:32%}
+  .cmp td{text-align:left;padding:22px 20px 22px 0;color:var(--text);font-weight:400;vertical-align:top;border-bottom:1px solid #ececec}
+  .cmp tr:last-child td{border-bottom:1px solid #e8e8ed}
+  .cmp td.feat{font-weight:500;color:var(--text)}
+  .cmp-blurb{display:block;margin-top:6px;font-size:13px;font-weight:400;line-height:1.45;color:var(--muted);max-width:260px}
+  .cmp-yes{color:var(--blue);font-size:18px;font-weight:500;line-height:1}
+  .cmp-stack{display:flex;flex-direction:column;gap:5px}
+  .cmp-note{margin-top:22px;font-size:13px;color:var(--muted)}
 
   /* ── CTA ── */
   #cta{background:var(--blue);padding:80px 24px;text-align:center}
@@ -173,7 +174,7 @@
 
 <!-- COMPARISON -->
 <section id="compare">
-  <div class="section-inner" style="max-width:900px">
+  <div class="section-inner" style="max-width:1040px">
     <div class="section-eyebrow">Side by side</div>
     <h2 class="section-title">ScreenLogic vs. PoolOS</h2>
     <p class="section-body">Same Pentair hardware. Same ScreenLogic adapter. A completely different experience.</p>
@@ -181,24 +182,65 @@
       <table class="cmp">
         <thead>
           <tr>
-            <th style="text-align:left;width:36%"></th>
+            <th></th>
             <th>ScreenLogic</th>
-            <th class="us">PoolOS</th>
+            <th>PoolOS</th>
+            <th>PoolOS Pro</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td class="feat">App launches with live data</td><td class="old">Spinner first, then data</td><td class="new">Instant &mdash; cached locally</td></tr>
-          <tr><td class="feat">Tap a control</td><td class="old">Wait 2&ndash;5s</td><td class="new">Instant &mdash; confirmed in background</td></tr>
-          <tr><td class="feat">Turn on the heater</td><td class="old">5+ taps through sub-menus</td><td class="new">One tap from the dashboard</td></tr>
-          <tr><td class="feat">Circuit state shown</td><td class="old">Says on when it's off &mdash; corrects later</td><td class="new">Hardware-verified on every update</td></tr>
-          <tr><td class="feat">Reconnecting after hours idle</td><td class="old">Often drops &mdash; needs a paperclip reset</td><td class="new">Automatic, under 2 seconds</td></tr>
-          <tr><td class="feat">Account required</td><td class="old">Sign-in / cloud account</td><td class="new">No account to control your pool</td></tr>
-          <tr><td class="feat">Severe weather alerts</td><td class="old">Not a focus</td><td class="new">Storm Watch (free, opt-in NWS)</td></tr>
-          <tr><td class="feat">Heat pump protection</td><td class="old">None &mdash; runs in any weather</td><td class="new">Weather Guard <span class="pat-pend">Pat. pend.</span> (PoolOS Pro)</td></tr>
+          <tr>
+            <td class="feat">Data available at launch</td>
+            <td></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="feat">Instant response from the app</td>
+            <td></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="feat">Equipment control on the Home screen</td>
+            <td></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="feat">Hardware-verified state</td>
+            <td></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="feat">Reconnects automatically after idle</td>
+            <td></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td class="feat">Weather Watch <span class="pat-pend">(Patent pending)</span><span class="cmp-blurb">Storms, heat-pump protection, and lightning.</span></td>
+            <td></td>
+            <td>Storm Watch only</td>
+            <td>
+              <div class="cmp-stack">
+                <div>Storm Watch</div>
+                <div>Weather Guard <span class="pat-pend">(Patent pending)</span></div>
+                <div>Lightning Proximity</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="feat">System Guard<span class="cmp-blurb">Overnight equipment alerts while the app is closed.</span></td>
+            <td></td>
+            <td></td>
+            <td><span class="cmp-yes" aria-label="Yes">&#10003;</span></td>
+          </tr>
         </tbody>
       </table>
     </div>
-    <p style="margin-top:18px;font-size:13px;color:#94a3b8;font-style:italic">PoolOS currently supports Pentair ScreenLogic. Jandy and Hayward are planned &mdash; not available yet.</p>
+    <p class="cmp-note">Weather Guard and Weather Watch are patent pending.</p>
   </div>
 </section>
 
