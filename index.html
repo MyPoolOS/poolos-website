@@ -100,6 +100,10 @@
   #modern{background:var(--bg)}
   #stable{background:var(--white)}
   #supported{background:var(--bg)}
+  #supported .owner-photo{margin:0}
+  #supported .owner-photo-card{border-radius:18px;overflow:hidden}
+  #supported .owner-photo-card img{display:block;width:100%;height:auto;object-fit:cover;border-radius:18px}
+  #supported .owner-photo-caption{margin-top:10px;font-size:13px;font-weight:400;color:var(--muted);line-height:1.5}
 
   .pillar-visual{background:var(--white);border-radius:20px;padding:28px;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.06)}
   .pillar-row{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;border-radius:12px;background:var(--bg);margin-bottom:10px}
@@ -407,20 +411,12 @@
         <p class="section-body" style="font-style:italic;color:var(--text)">The ScreenLogic app hasn't had meaningful updates in years. Pool owners know it.</p>
       </div>
       <div class="col-visual">
-        <div class="pillar-visual">
-          <div class="pillar-row">
-            <div class="pillar-row-icon" style="background:rgba(0,122,255,.1);color:var(--blue)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-            <div><div class="pillar-row-label">One developer</div><div class="pillar-row-desc">Owns this exact setup. Uses this app daily.</div></div>
+        <figure class="owner-photo">
+          <div class="owner-photo-card">
+            <img src="images/owner-pool-night.jpg" alt="The founder’s pool at night"/>
           </div>
-          <div class="pillar-row">
-            <div class="pillar-row-icon" style="background:rgba(34,197,94,.1);color:var(--green)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div><div class="pillar-row-label">Real email support</div><div class="pillar-row-desc">A real person responds — not a ticket queue</div></div>
-          </div>
-          <div class="pillar-row">
-            <div class="pillar-row-icon" style="background:rgba(247,115,22,.1);color:var(--orange)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div><div class="pillar-row-label">Updates that matter</div><div class="pillar-row-desc">Ships when things break or improve — not on a PR schedule</div></div>
-          </div>
-        </div>
+          <figcaption class="owner-photo-caption">Yes, this is a real photo of the owner’s pool, taken by the owner on his iPhone and not touched up.</figcaption>
+        </figure>
       </div>
     </div>
   </div>
